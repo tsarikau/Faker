@@ -163,7 +163,9 @@ class Lorem extends \Faker\Provider\Base
     {
         $text = array();
         if ($maxNbChars < 5) {
-            throw new \InvalidArgumentException('text() can only generate text of at least 5 characters');
+            $pattern=str_repeat('#',$maxNbChars);
+            return Base::lexify($pattern);
+            
         } elseif ($maxNbChars < 25) {
             // join words
             while (empty($text)) {

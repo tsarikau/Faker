@@ -6,10 +6,8 @@ use Faker\Provider\Lorem;
 
 class LoremTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testTextThrowsExceptionWhenAskedLextSizeLessThan5()
+    
+    public function testTextNotThrowsExceptionWhenAskedLextSizeLessThan5()
     {
         Lorem::text(4);
     }
